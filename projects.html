@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Yuri Neil Bayron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero hero-page">
+      <nav class="nav wrapper">
+        <a class="logo" href="index.html">
+          <span class="logo-mark">YN</span>
+          <span>Yuri Neil Bayron</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="mailto:bayronyurineil@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section section-contrast">
+        <div class="wrapper">
+          <p class="section-label">Projects</p>
+          <div class="section-heading-row">
+            <h2>Selected work across agriculture, public service, and mobile platforms.</h2>
+            <p class="section-intro">These projects reflect the kind of systems I like building: useful, understandable, and designed for real users.</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card accent-amber">
+              <div class="project-topline"><span class="project-badge">Capstone Project</span><span class="project-year">AI + Mobile</span></div>
+              <h3>AI Cabbage Freshness</h3>
+              <p class="project-desc">A mobile application that uses computer vision to evaluate cabbage freshness in real time and support local farmers.</p>
+              <div class="project-tags"><span>React Native</span><span>FastAPI</span><span>YOLOv8</span><span>PyTorch</span><span>Firebase</span></div>
+              <ul class="project-features"><li>Custom-trained model for produce quality assessment.</li><li>FastAPI backend for image inference and response handling.</li><li>Mobile-first workflow designed for real agricultural use.</li></ul>
+            </article>
+            <article class="project-card accent-cyan">
+              <div class="project-topline"><span class="project-badge">Public Service</span><span class="project-year">Web System</span></div>
+              <h3>Barangay Health Connect</h3>
+              <p class="project-desc">A multi-tenant appointment platform for barangays that streamlines health scheduling and supports better service delivery.</p>
+              <div class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+              <ul class="project-features"><li>Tenant separation for secure barangay-specific data handling.</li><li>Scheduling flow that reduces manual coordination overhead.</li><li>Dashboard reporting for staff and administrators.</li></ul>
+            </article>
+            <article class="project-card accent-green">
+              <div class="project-topline"><span class="project-badge">AgriTech</span><span class="project-year">Mobile App</span></div>
+              <h3>FarmConnect</h3>
+              <p class="project-desc">A farmer-focused mobile platform for market access, updates, and basic resource coordination in low-friction environments.</p>
+              <div class="project-tags"><span>React Native</span><span>Firebase</span></div>
+              <ul class="project-features"><li>Real-time market and supply information for farmers.</li><li>Interface designed for mobile access and constrained connectivity.</li><li>Cloud sync for faster updates across users.</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="wrapper footer-row"><p>&copy; 2026 Yuri Neil Bayron</p><p>Built with HTML, CSS, JavaScript, and AI-assisted workflows.</p></div></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
