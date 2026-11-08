@@ -15,7 +15,7 @@
     <header class="hero hero-page">
       <nav class="nav wrapper">
         <a class="logo" href="index.html">
-          <span class="logo-mark">YN</span>
+          <img class="logo-mark" src="./images/yuri.png" alt="Yuri Neil Bayron">
           <span>Yuri Neil Bayron</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
@@ -23,7 +23,7 @@
           <li><a href="index.html#about">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="mailto:bayronyurineil@gmail.com">Contact</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -33,38 +33,70 @@
         <div class="wrapper">
           <p class="section-label">Projects</p>
           <div class="section-heading-row">
-            <h2>Selected work across agriculture, public service, and mobile platforms.</h2>
-            <p class="section-intro">These projects reflect the kind of systems I like building: useful, understandable, and designed for real users.</p>
+            <h2 class="interactive-heading"><span class="section-typewriter" aria-label="Selected work across agriculture, public service, and mobile platforms."></span></h2>
+           
           </div>
           <div class="project-grid">
-            <article class="project-card accent-amber">
+            <article class="project-card accent-amber cabbage-card">
               <div class="project-topline"><span class="project-badge">Capstone Project</span><span class="project-year">AI + Mobile</span></div>
               <h3>AI Cabbage Freshness</h3>
               <p class="project-desc">A mobile application that uses computer vision to evaluate cabbage freshness in real time and support local farmers.</p>
-              <div class="project-tags"><span>React Native</span><span>FastAPI</span><span>YOLOv8</span><span>PyTorch</span><span>Firebase</span></div>
+              <div class="project-tech-stack">
+                <span class="project-tech-label">Tech Stack:</span>
+                <div class="project-tags"><span>React Native</span><span>FastAPI</span><span>YOLOv8</span><span>PyTorch</span><span>Firebase</span></div>
+              </div>
               <ul class="project-features"><li>Custom-trained model for produce quality assessment.</li><li>FastAPI backend for image inference and response handling.</li><li>Mobile-first workflow designed for real agricultural use.</li></ul>
+              <div class="project-showcase cabbage-showcase" aria-label="AI Cabbage Freshness app previews">
+                <figure class="showcase-shot showcase-shot-left"><img src="./images/1.jpg" alt="AI Cabbage Freshness app preview 1"></figure>
+                <figure class="showcase-shot showcase-shot-center"><img src="./images/2.jpg" alt="AI Cabbage Freshness app preview 2"></figure>
+                <figure class="showcase-shot showcase-shot-right"><img src="./images/3.jpg" alt="AI Cabbage Freshness app preview 3"></figure>
+              </div>
             </article>
-            <article class="project-card accent-cyan">
+            <article class="project-card accent-cyan health-card">
               <div class="project-topline"><span class="project-badge">Public Service</span><span class="project-year">Web System</span></div>
               <h3>Barangay Health Connect</h3>
               <p class="project-desc">A multi-tenant appointment platform for barangays that streamlines health scheduling and supports better service delivery.</p>
-              <div class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+              <div class="project-tech-stack">
+                <span class="project-tech-label">Tech Stack:</span>
+                <div class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span><span>XAMPP</span></div>
+              </div>
               <ul class="project-features"><li>Tenant separation for secure barangay-specific data handling.</li><li>Scheduling flow that reduces manual coordination overhead.</li><li>Dashboard reporting for staff and administrators.</li></ul>
+              <div class="project-showcase" aria-label="Barangay Health Connect system previews">
+                <figure class="showcase-shot showcase-shot-left"><img src="./images/643640483_25986416344356616_8163699973318577676_n.png" alt="Barangay Health Connect appointment dashboard"></figure>
+                <figure class="showcase-shot showcase-shot-right"><img src="./images/655095944_718724681236256_6864056313148869792_n.png" alt="Barangay Health Connect health management system"></figure>
+              </div>
             </article>
-            <article class="project-card accent-green">
-              <div class="project-topline"><span class="project-badge">AgriTech</span><span class="project-year">Mobile App</span></div>
+            <article class="project-card accent-green farm-card">
+              <div class="project-topline"><span class="project-badge">AgriTech</span><span class="project-year">Web App</span></div>
               <h3>FarmConnect</h3>
               <p class="project-desc">A farmer-focused mobile platform for market access, updates, and basic resource coordination in low-friction environments.</p>
-              <div class="project-tags"><span>React Native</span><span>Firebase</span></div>
+              <div class="project-tech-stack">
+                <span class="project-tech-label">Tech Stack:</span>
+                <div class="project-tags"><span>React Native</span><span>Mongo Atlas DB</span><span>Tailwind CSS</span></div>
+              </div>
               <ul class="project-features"><li>Real-time market and supply information for farmers.</li><li>Interface designed for mobile access and constrained connectivity.</li><li>Cloud sync for faster updates across users.</li></ul>
+              <div class="project-showcase" aria-label="FarmConnect mobile app previews">
+                <figure class="showcase-shot showcase-shot-left"><img src="./images/frm1.png" alt="FarmConnect app preview 1"></figure>
+                <figure class="showcase-shot showcase-shot-right"><img src="./images/frm2.png" alt="FarmConnect app preview 2"></figure>
+              </div>
             </article>
           </div>
         </div>
       </section>
     </main>
 
+    <dialog class="image-lightbox" id="imageLightbox" aria-label="Project image preview">
+      <button class="lightbox-close" type="button" aria-label="Close image preview"><i class="fas fa-xmark"></i></button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+      <figure class="lightbox-content">
+        <img id="lightboxImage" src="" alt="">
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    </dialog>
+
     <footer class="footer"><div class="wrapper footer-row"><p>&copy; 2026 Yuri Neil Bayron</p><p>Built with HTML, CSS, JavaScript, and AI-assisted workflows.</p></div></footer>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
