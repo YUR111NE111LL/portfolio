@@ -1,25 +1,25 @@
-/* ============================================================
-   CYBERPUNK DARK THEME — Yuri Neil Bayron Portfolio
+﻿/* ============================================================
+   CYBERPUNK DARK THEME â€” Yuri Neil Bayron Portfolio
    Layout/structure preserved from original. Only visuals changed.
    ============================================================ */
 
 :root {
-  /* Backgrounds — deep midnight layers */
+  /* Backgrounds â€” deep midnight layers */
   --bg: #06080f;
   --bg-soft: #0a0e1a;
   --surface: rgba(14, 19, 34, 0.72);
   --surface-strong: #0f1524;
   --surface-dark: #050710;
 
-  /* Text — cool, crisp, neon-adjacent */
+  /* Text â€” cool, crisp, neon-adjacent */
   --text: #e8f0ff;
   --text-soft: #8b9bbd;
 
-  /* Lines — subtle cyan-tinted hairlines */
+  /* Lines â€” subtle cyan-tinted hairlines */
   --line: rgba(0, 229, 255, 0.14);
   --line-strong: rgba(0, 229, 255, 0.28);
 
-  /* Accents — cyberpunk neon palette */
+  /* Accents â€” cyberpunk neon palette */
   --accent: #00e5ff;          /* electric cyan */
   --accent-deep: #00b3cc;
   --accent-gold: #f5c542;
@@ -28,7 +28,7 @@
   --accent-magenta: #ff3fa4;  /* hot pink secondary */
   --accent-violet: #9d4dff;
 
-  /* Shadows — neon glow instead of warm drop shadows */
+  /* Shadows â€” neon glow instead of warm drop shadows */
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.08);
   --shadow-md: 0 16px 34px rgba(0, 0, 0, 0.55), 0 0 24px rgba(0, 229, 255, 0.06);
   --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(0, 229, 255, 0.05);
@@ -82,6 +82,29 @@ body::before {
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 16%;
+  right: -7rem;
+  z-index: 0;
+  width: clamp(18rem, 34vw, 32rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.38;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(0, 229, 255, 0.16), transparent 58%),
+    repeating-radial-gradient(ellipse at 50% 50%, transparent 0 16px, rgba(0, 229, 255, 0.2) 17px, transparent 18px 31px),
+    repeating-conic-gradient(from 0deg, rgba(157, 77, 255, 0.16) 0deg 1deg, transparent 1deg 12deg);
+  box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.12), 0 0 50px rgba(0, 229, 255, 0.08);
+  -webkit-mask-image: radial-gradient(circle, #000 52%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 52%, transparent 72%);
+  transform-style: preserve-3d;
+  animation: backgroundOrb 26s ease-in-out infinite;
 }
 
 img {
@@ -1472,11 +1495,16 @@ h2 {
   font-weight: 700;
 }
 
-.skill-item i,
+.skill-item span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.skill-logo,
 .ai-tool-item i {
-  width: 1.45rem;
-  text-align: center;
-  font-size: 1.2rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex-shrink: 0;
 }
 
 .ai-tools-grid {
@@ -1498,24 +1526,10 @@ h2 {
   font-size: 0.85rem;
 }
 
-/* Neon-tinted brand icons */
-.fa-python     { color: #4aa8e0; }
-.fa-php        { color: #9d8bf0; }
-.fa-js         { color: #f5c542; }
-.fa-database   { color: #00e5ff; }
-.fa-html5      { color: #ff6b3d; }
-.fa-css3-alt   { color: #4aa8e0; }
-.fa-laravel    { color: #ff5a3c; }
-.fa-react      { color: #00e5ff; }
-.fa-bolt       { color: #f5c542; }
-.fa-fire       { color: #ff7a3d; }
-.fa-brain      { color: #b48aff; }
-.fa-bootstrap  { color: #a07af0; }
-.fa-microsoft  { color: #ff6b3d; }
-.fa-paintbrush { color: #39ff88; }
-.fa-comment-dots { color: #39ff88; }
-.fa-gem        { color: #4aa8e0; }
-.fa-cloud      { color: #ff6b8a; }
+.skill-logo {
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.12));
+}
 
 .footer {
   padding: 1.6rem 0 2.6rem;
@@ -1533,7 +1547,7 @@ h2 {
 }
 
 /* ============================================================
-   RESPONSIVE — identical breakpoints to original
+   RESPONSIVE â€” identical breakpoints to original
    ============================================================ */
 
 @keyframes profileFloat {
@@ -1546,7 +1560,16 @@ h2 {
   82%, 100% { transform: translateX(130%); }
 }
 
+@keyframes backgroundOrb {
+  0%, 100% { transform: perspective(900px) rotateX(58deg) rotateY(-16deg) rotateZ(-12deg) translateY(0); }
+  50% { transform: perspective(900px) rotateX(72deg) rotateY(18deg) rotateZ(10deg) translateY(-18px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
+
   .hero-typewriter::after {
     animation: none;
   }
@@ -1702,6 +1725,11 @@ h2 {
 }
 
 @media (max-width: 640px) {
+  body::after {
+    right: -10rem;
+    opacity: 0.24;
+  }
+
   .image-lightbox {
     width: calc(100vw - 1rem);
     height: 82vh;
