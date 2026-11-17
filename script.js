@@ -123,7 +123,7 @@ if (navToggle && navLinks) {
 (function() {
   const heroTypeEl = document.querySelector('.hero-typewriter');
   if (heroTypeEl) {
-    const heroText = ' I am Yuri Neil Bayron - Full Stack Dev';
+    const heroText = ' I am Yuri Neil Bayron';
     let heroIndex = 0;
     let heroDeleting = false;
 
