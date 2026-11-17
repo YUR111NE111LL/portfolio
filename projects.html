@@ -11,9 +11,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
+  <!-- 3D Cursor -->
+  <div class="cursor-3d" id="cursor3d" aria-hidden="true">
+    <div class="cursor-3d-inner">
+      <div class="cursor-ring"></div>
+      <div class="cursor-ring"></div>
+      <div class="cursor-dot"></div>
+    </div>
+  </div>
+
+  <!-- Background atmosphere -->
+  <div class="bg-glow" aria-hidden="true">
+    <div class="scan-sweep"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <div class="page-shell" data-reactive-bg style="--bg-dot: 255, 255, 255; --bg-glow: 255, 255, 255;">
     <header class="hero hero-page">
-      <nav class="nav wrapper">
+      <nav class="nav">
         <a class="logo" href="index.html">
           <img class="logo-mark" src="./images/yuri.png" alt="Yuri Neil Bayron">
           <span>Yuri Neil Bayron</span>
@@ -21,7 +37,7 @@
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html#about">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -34,7 +50,6 @@
           <p class="section-label">Projects</p>
           <div class="section-heading-row">
             <h2 class="interactive-heading"><span class="section-typewriter" aria-label="Selected work across agriculture, public service, and mobile platforms."></span></h2>
-           
           </div>
           <div class="project-grid">
             <article class="project-card accent-amber cabbage-card">
@@ -47,9 +62,11 @@
               </div>
               <ul class="project-features"><li>Custom-trained model for produce quality assessment.</li><li>FastAPI backend for image inference and response handling.</li><li>Mobile-first workflow designed for real agricultural use.</li></ul>
               <div class="project-showcase cabbage-showcase" aria-label="AI Cabbage Freshness app previews">
-                <figure class="showcase-shot showcase-shot-left"><img src="./images/1.jpg" alt="AI Cabbage Freshness app preview 1"></figure>
-                <figure class="showcase-shot showcase-shot-center"><img src="./images/2.jpg" alt="AI Cabbage Freshness app preview 2"></figure>
-                <figure class="showcase-shot showcase-shot-right"><img src="./images/3.jpg" alt="AI Cabbage Freshness app preview 3"></figure>
+                <figure class="showcase-shot showcase-shot-left is-active" aria-hidden="false"><img src="./images/1.jpg" alt="AI Cabbage Freshness app preview 1"></figure>
+                <figure class="showcase-shot showcase-shot-center" aria-hidden="true"><img src="./images/2.jpg" alt="AI Cabbage Freshness app preview 2"></figure>
+                <figure class="showcase-shot showcase-shot-right" aria-hidden="true"><img src="./images/3.jpg" alt="AI Cabbage Freshness app preview 3"></figure>
+                <button class="project-gallery-nav project-gallery-prev" type="button" aria-label="Previous AI Cabbage Freshness image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="project-gallery-nav project-gallery-next" type="button" aria-label="Next AI Cabbage Freshness image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
               </div>
             </article>
             <article class="project-card accent-cyan health-card">
@@ -62,8 +79,10 @@
               </div>
               <ul class="project-features"><li>Tenant separation for secure barangay-specific data handling.</li><li>Scheduling flow that reduces manual coordination overhead.</li><li>Dashboard reporting for staff and administrators.</li></ul>
               <div class="project-showcase" aria-label="Barangay Health Connect system previews">
-                <figure class="showcase-shot showcase-shot-left"><img src="./images/643640483_25986416344356616_8163699973318577676_n.png" alt="Barangay Health Connect appointment dashboard"></figure>
-                <figure class="showcase-shot showcase-shot-right"><img src="./images/655095944_718724681236256_6864056313148869792_n.png" alt="Barangay Health Connect health management system"></figure>
+                <figure class="showcase-shot showcase-shot-left is-active" aria-hidden="false"><img src="./images/643640483_25986416344356616_8163699973318577676_n.png" alt="Barangay Health Connect appointment dashboard"></figure>
+                <figure class="showcase-shot showcase-shot-right" aria-hidden="true"><img src="./images/655095944_718724681236256_6864056313148869792_n.png" alt="Barangay Health Connect health management system"></figure>
+                <button class="project-gallery-nav project-gallery-prev" type="button" aria-label="Previous Barangay Health Connect image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="project-gallery-nav project-gallery-next" type="button" aria-label="Next Barangay Health Connect image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
               </div>
             </article>
             <article class="project-card accent-green farm-card">
@@ -76,8 +95,10 @@
               </div>
               <ul class="project-features"><li>Real-time market and supply information for farmers.</li><li>Interface designed for mobile access and constrained connectivity.</li><li>Cloud sync for faster updates across users.</li></ul>
               <div class="project-showcase" aria-label="FarmConnect mobile app previews">
-                <figure class="showcase-shot showcase-shot-left"><img src="./images/frm1.png" alt="FarmConnect app preview 1"></figure>
-                <figure class="showcase-shot showcase-shot-right"><img src="./images/frm2.png" alt="FarmConnect app preview 2"></figure>
+                <figure class="showcase-shot showcase-shot-left is-active" aria-hidden="false"><img src="./images/frm1.png" alt="FarmConnect app preview 1"></figure>
+                <figure class="showcase-shot showcase-shot-right" aria-hidden="true"><img src="./images/frm2.png" alt="FarmConnect app preview 2"></figure>
+                <button class="project-gallery-nav project-gallery-prev" type="button" aria-label="Previous FarmConnect image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="project-gallery-nav project-gallery-next" type="button" aria-label="Next FarmConnect image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
               </div>
               <p class="project-link-row"><a class="project-link" href="https://farm-connect-two.vercel.app/" target="_blank" rel="noreferrer">Open FarmConnect</a></p>
             </article>
@@ -98,6 +119,7 @@
 
     <footer class="footer"><div class="wrapper footer-row"><p>&copy; 2026 Yuri Neil Bayron</p><p>Built with HTML, CSS, JavaScript, and AI-assisted workflows.</p></div></footer>
   </div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
+  <script src="reactive-bg.js"></script>
 </body>
 </html>

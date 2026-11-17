@@ -11,15 +11,31 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
+  <!-- 3D Cursor -->
+  <div class="cursor-3d" id="cursor3d" aria-hidden="true">
+    <div class="cursor-3d-inner">
+      <div class="cursor-ring"></div>
+      <div class="cursor-ring"></div>
+      <div class="cursor-dot"></div>
+    </div>
+  </div>
+
+  <!-- Background atmosphere -->
+  <div class="bg-glow" aria-hidden="true">
+    <div class="scan-sweep"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <div class="page-shell" data-reactive-bg style="--bg-dot: 255, 255, 255; --bg-glow: 255, 255, 255;">
     <header class="hero hero-page">
-      <nav class="nav wrapper">
+      <nav class="nav">
         <a class="logo" href="index.html"><img class="logo-mark" src="./images/yuri.png" alt="Yuri Neil Bayron"><span>Yuri Neil Bayron</span></a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html#about">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="skills.html">Skills</a></li>
+          <li><a href="skills.html" class="active">Skills</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -64,32 +80,32 @@
               <h3>Programming Languages – Hands on Experience</h3>
               <div class="skills-grid">
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/python/ffffff" alt="Python logo" style="background:#3776AB; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/python/ffffff" alt="Python logo" style="background:#3776AB;">
                   <span>Python</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/php/ffffff" alt="PHP logo" style="background:#777BB4; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/php/ffffff" alt="PHP logo" style="background:#777BB4;">
                   <span>PHP</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/javascript/1f1f1f" alt="JavaScript logo" style="background:#F7DF1E; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/javascript/1f1f1f" alt="JavaScript logo" style="background:#F7DF1E;">
                   <span>JavaScript</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/mysql/ffffff" alt="SQL logo" style="background:#00758F; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/mysql/ffffff" alt="SQL logo" style="background:#00758F;">
                   <span>SQL</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/html5/ffffff" alt="HTML logo" style="background:#E44D26; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/html5/ffffff" alt="HTML logo" style="background:#E44D26;">
                   <span>HTML</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/css3/ffffff" alt="CSS logo" style="background:#1C88D5; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/css3/ffffff" alt="CSS logo" style="background:#1C88D5;">
                   <span>CSS</span>
                 </div>
               </div>
@@ -99,47 +115,47 @@
               <h3>Frameworks and Tools - Hands on Experience</h3>
               <div class="skills-grid">
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel logo" style="background:#FF2D20; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel logo" style="background:#FF2D20;">
                   <span>Laravel</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/react/ffffff" alt="React Native logo" style="background:#61DAFB; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/react/ffffff" alt="React Native logo" style="background:#61DAFB;">
                   <span>React Native</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/fastapi/ffffff" alt="FastAPI logo" style="background:#F5C542; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/fastapi/ffffff" alt="FastAPI logo" style="background:#F5C542;">
                   <span>FastAPI</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/firebase/ffffff" alt="Firebase logo" style="background:#FF8F00; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/firebase/ffffff" alt="Firebase logo" style="background:#FF8F00;">
                   <span>Firebase</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/pytorch/ffffff" alt="PyTorch logo" style="background:#EE4C2C; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/pytorch/ffffff" alt="PyTorch logo" style="background:#EE4C2C;">
                   <span>PyTorch</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/mysql/ffffff" alt="MySQL logo" style="background:#00758F; border-radius: 12px; padding: 0.35rem;">
-                  <span>MySQL </span>
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/mysql/ffffff" alt="MySQL logo" style="background:#00758F;">
+                  <span>MySQL</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="https://cdn.simpleicons.org/bootstrap/ffffff" alt="Bootstrap logo" style="background:#7A3FF2; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="https://cdn.simpleicons.org/bootstrap/ffffff" alt="Bootstrap logo" style="background:#7A3FF2;">
                   <span>Bootstrap</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="./images/microsoft-office-logo.svg" alt="Microsoft Office logo" style="background:#F3F3F3; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="./images/microsoft-office-logo.svg" alt="Microsoft Office logo" style="background:#F3F3F3;">
                   <span>Microsoft Office</span>
                 </div>
 
                 <div class="skill-item">
-                  <img class="skill-logo" src="./images/canva-logo.svg" alt="Canva logo" style="background:#00C4CC; border-radius: 12px; padding: 0.35rem;">
+                  <img class="skill-logo" src="./images/canva-logo.svg" alt="Canva logo" style="background:#00C4CC;">
                   <span>Canva</span>
                 </div>
               </div>
@@ -152,5 +168,6 @@
     <footer class="footer"><div class="wrapper footer-row"><p>&copy; 2026 Yuri Neil Bayron</p><p>Built with HTML, CSS, JavaScript, and AI-assisted workflows.</p></div></footer>
   </div>
   <script src="script.js"></script>
+  <script src="reactive-bg.js"></script>
 </body>
 </html>

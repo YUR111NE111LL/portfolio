@@ -11,14 +11,27 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero" id="top">
-      <div class="hero-orb hero-orb-left"></div>
-      <div class="hero-orb hero-orb-right"></div>
+  <!-- 3D Cursor -->
+  <div class="cursor-3d" id="cursor3d" aria-hidden="true">
+    <div class="cursor-3d-inner">
+      <div class="cursor-ring"></div>
+      <div class="cursor-ring"></div>
+      <div class="cursor-dot"></div>
+    </div>
+  </div>
 
-      <nav class="nav wrapper">
+  <!-- Background atmosphere -->
+  <div class="bg-glow" aria-hidden="true">
+    <div class="scan-sweep"></div>
+    <div class="orb-ring"></div>
+  </div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <div class="page-shell" data-reactive-bg style="--bg-dot: 255, 255, 255; --bg-glow: 255, 255, 255;">
+    <header class="hero" id="top">
+      <nav class="nav">
         <a class="logo" href="#top">
-          <img class="logo-mark" src="./images/yuri.png" alt="Yuri Neil Bayron">
+          <img class="logo-mark" src="./images/yurineil-cutout.png" alt="Yuri Neil Bayron">
           <span>Yuri Neil Bayron</span>
         </a>
 
@@ -54,10 +67,8 @@
             <li><i class="fas fa-layer-group"></i> Web, mobile, and AI workflows</li>
           </ul>
 
-          <br>
           <div class="hero-ai-workflow">
             <p class="hero-ai-title">AI Tools in My Workflow</p>
-                   
             <div class="hero-ai-tools" aria-label="AI tools used">
               <div class="hero-ai-tool">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/deepseek.svg" alt="" width="24" height="24">
@@ -77,7 +88,7 @@
               </div>
               <div class="hero-ai-tool">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cursor.svg" alt="" width="24" height="24">
-                <span>Cursor </span>
+                <span>Cursor</span>
               </div>
               <div class="hero-ai-tool">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubcopilot.svg" alt="" width="24" height="24">
@@ -90,7 +101,8 @@
         <div class="hero-panel">
           <div class="profile-card">
             <div class="profile-image-wrap cyber-frame">
-              <img src="./images/yuri-cutout.png" alt="Portrait of Yuri Neil Bayron" class="profile-image cutout">
+              <img src="./images/yurineil-cutout.png" alt="Portrait of Yuri Neil Bayron" class="profile-image cutout profile-image-primary">
+              <img src="./images/yurigwapo.jpg" alt="" aria-hidden="true" class="profile-image cutout profile-image-hover">
             </div>
             <div class="profile-card-body">
               <p class="profile-kicker">Currently focused on</p>
@@ -175,7 +187,7 @@
                 <li>Shows dedication to improving programming, computer, and digital productivity skills.</li>
               </ul>
             </article>
-  <br>              
+
             <p class="section-label recognition-section-label">Achievements &amp; Recognitions</p>
 
             <article class="surface-card recognition-card" tabindex="0">
@@ -192,7 +204,7 @@
                 <figure><img src="./images/inno5.png" alt="Innoventure prototype presentation"></figure>
               </div>
             </article>
-            <br>
+
             <article class="surface-card recognition-card" tabindex="0">
               <div class="recognition-content">
                 <span class="recognition-label">Mobile Application PRESENTATION</span>
@@ -206,35 +218,36 @@
                 <figure><img src="./images/task3.jpg" alt="DailyTask application photo 3"></figure>
               </div>
             </article>
-            <br>
-            <article class="surface-card recognition-card" tabindex="0">
-              <div class="recognition-content">
-                <span class="recognition-label">Certification</span>
-                <h3>Cisco Networking Academy – CCNA: Switching, Routing &amp; Wireless Essentials</h3>
-                <p>Successfully completed the Cisco Networking Academy course covering network switching, routing fundamentals, and wireless networking concepts.</p>
-              </div>
-              <div class="recognition-gallery certificate-gallery" aria-label="Cisco CCNA certificate">
-                <figure><img src="./images/ccna-switching-routing-and-wireless-essentials.1.png" alt="Cisco CCNA Switching, Routing and Wireless Essentials certificate"></figure>
+
+            <article class="surface-card recognition-card certification-pair" tabindex="0">
+              <div class="certification-pair-grid">
+                <section class="certification-item" aria-label="Cisco CCNA certificate">
+                  <div class="recognition-gallery certificate-gallery" aria-label="Cisco CCNA certificate image">
+                    <figure><img src="./images/ccna-completion-certificate.png" alt="Cisco CCNA Switching, Routing and Wireless Essentials certificate"></figure>
+                  </div>
+                  <div class="recognition-content">
+                    <span class="recognition-label">Certification</span>
+                    <h3>Cisco Networking Academy – CCNA: Switching, Routing &amp; Wireless Essentials</h3>
+                    <p>Successfully completed the Cisco Networking Academy course covering network switching, routing fundamentals, and wireless networking concepts.</p>
+                  </div>
+                </section>
+
+                <section class="certification-item" aria-label="AI literacy certificate">
+                  <div class="recognition-gallery certificate-gallery" aria-label="AI literacy certificate image">
+                    <figure><img src="./images/ai-literacy-certificate.png" alt="Introduction to AI Literacy and Responsible Use certificate"></figure>
+                  </div>
+                  <div class="recognition-content">
+                    <span class="recognition-label">Certification</span>
+                    <h3>Introduction to AI Literacy and Responsible Use</h3>
+                    <p>Successfully completed a micro-credentials course focused on understanding Artificial Intelligence (AI), its practical applications, and the responsible use of AI tools and technologies.</p>
+                  </div>
+                </section>
               </div>
             </article>
 
-            <br>
-            <article class="surface-card recognition-card" tabindex="0">
-              <div class="recognition-content">
-                <span class="recognition-label">Certification</span>
-                <h3>Introduction to AI Literacy and Responsible Use</h3>
-                <p>Successfully completed a micro-credentials course focused on understanding Artificial Intelligence (AI), its practical applications, and the responsible use of AI tools and technologies.</p>
-              </div>
-              <div class="recognition-gallery certificate-gallery" aria-label="AI literacy certificate">
-                <figure><img src="./images/ai-literacy-certificate.png" alt="Introduction to AI Literacy and Responsible Use certificate"></figure>
-              </div>
-            </article>
-
-            <br>
-              <div>
-         
-            <h2>CONTACT </h2>
-          </div>
+            <div>
+              <h2>CONTACT</h2>
+            </div>
 
             <div class="contact-grid" id="contact">
               <a class="contact-chip" href="mailto:bayronyurineil@gmail.com">
@@ -245,7 +258,6 @@
                 <i class="fab fa-github"></i>
                 <span>github.com/YUR111NE111LL</span>
               </a>
-              
               <a class="contact-chip" href="https://www.facebook.com/yuriiiiineillll" target="_blank" rel="noreferrer">
                 <i class="fab fa-facebook"></i>
                 <span>facebook.com/yuriiiiineillll</span>
@@ -254,7 +266,6 @@
           </div>
         </div>
       </section>
-
     </main>
 
     <footer class="footer">
@@ -266,5 +277,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="reactive-bg.js"></script>
 </body>
 </html>
